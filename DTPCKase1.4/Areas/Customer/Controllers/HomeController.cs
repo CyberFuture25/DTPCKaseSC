@@ -2,7 +2,7 @@ using DTPCKase1._4.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace DTPCKase1._4.Controllers
+namespace DTPCKase1._4.Areas.Customer.Controllers
 {
     public class HomeController : Controller
     {
