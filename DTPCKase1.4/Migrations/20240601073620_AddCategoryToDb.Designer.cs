@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DTPCKase1._4.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240531072013_AddCategoryTableToDb")]
-    partial class AddCategoryTableToDb
+    [Migration("20240601073620_AddCategoryToDb")]
+    partial class AddCategoryToDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
