@@ -15,17 +15,23 @@ namespace DTPCKase1._4
         }
         public DbSet<Categoria> Categorias { get; set; }
         //public DbSet<Producto> Productos { get; set; }
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+                  modelBuilder.Entity<Categoria>().HasData(
+                  new Categoria { Id = 1, nom_categoria = "PC Cases", DisplayOrder = 1 },
+                  new Categoria { Id = 2, nom_categoria = "Laptop Skins", DisplayOrder = 2 },
+                  new Categoria { Id = 3, nom_categoria = "Mousepads", DisplayOrder = 3 }
+                  );
+
+
+        }
+    }
+}
         //    {
 
-        //        base.OnModelCreating(modelBuilder);
-
-        //        modelBuilder.Entity<Categoria>().HasData(
-        //            new Categoria { Id = 1, nom_categoria = "PC Cases", DisplayOrder = 1 },
-        //            new Categoria { Id = 2, nom_categoria = "Laptop Skins", DisplayOrder = 2 },
-        //            new Categoria { Id = 3, nom_categoria = "Mousepads", DisplayOrder = 3 }
-        //            );
+        //
         //        modelBuilder.Entity<Producto>().HasData(
         //       new Producto
         //       {
@@ -76,6 +82,5 @@ namespace DTPCKase1._4
         //       );
         //    }
         //}
-    }
-}
+    
 

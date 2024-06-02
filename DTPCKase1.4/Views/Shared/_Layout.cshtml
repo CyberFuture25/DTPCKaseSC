@@ -40,20 +40,20 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a class="dropdown-item" asp-area="Admin" asp-controller="Categoria" asp-action="Index">Categoria</a>
+                                    <a class="dropdown-item"  asp-controller="Categoria" asp-action="Index">Categoria</a>
                                 </li>
+                              @*   <li class="nav-item">
+                                    <a class="dropdown-item" asp-controller="Producto" asp-action="Index">Productos</a>
+                                </li> *@
                                 <li class="nav-item">
-                                    <a class="dropdown-item" asp-area="Admin" asp-controller="Producto" asp-action="Index">Productos</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="dropdown-item" asp-area="Admin" asp-controller="Company" asp-action="Index">Company</a>
+                                    <a class="dropdown-item"  asp-controller="Company" asp-action="Index">Company</a>
                                 </li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li class="nav-item">
-                                    <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Register">Create User</a>
+                                    <a class="dropdown-item"  asp-page="/Account/Register">Create User</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="dropdown-item" asp-area="Admin" asp-controller="User" asp-action="Index">Manage User</a>
+                                    <a class="dropdown-item"  asp-controller="User" asp-action="Index">Manage User</a>
                                 </li>
 
                             </ul>
@@ -61,6 +61,7 @@
                     </ul>
                 </div>
             </div>
+
         </nav>
     </header>
     <div class="container">
@@ -68,12 +69,13 @@
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer bg-primary-black text-muted">
+    <footer class="border-top footer bg-primary-white text-muted">
         <div class="text-center">
-            &copy; 2024 - Mikey Aranguren - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2024 - Mikey Aranguren
         </div>
+      
     </footer>
+ 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
