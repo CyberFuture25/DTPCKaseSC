@@ -9,9 +9,9 @@ namespace DTPCKase1._4.Models
         public int Id { get; set; }
         [Required]
         [MaxLength(30)]
-        [DisplayName("Categoria")]
+        [DisplayName("Nombre Categoria")]
         public string? nom_categoria { get; set; }
-        [DisplayName("Orden")]
+        [DisplayName("Display Order")]
         [Range(1, 100, ErrorMessage = "Este campo solo admite valores entre 1-100")]
         public int DisplayOrder { get; set; }
     }

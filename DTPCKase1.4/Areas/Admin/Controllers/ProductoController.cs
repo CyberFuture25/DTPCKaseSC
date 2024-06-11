@@ -5,34 +5,30 @@ using Microsoft.AspNetCore.Mvc;
 namespace DTPCKase1._4.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class CategoriaController : Controller
+    public class ProductoController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
-        public CategoriaController(IUnitOfWork unitOfWork)
+        public ProductoController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
         public IActionResult Index()
         {
-            List<Categoria> objCategoriaList = _unitOfWork.Categoria.GetAll().ToList();
-            return View(objCategoriaList);
+            List<Producto> objProductoList = _unitOfWork.Producto.GetAll().ToList();
+            return View(objProductoList);
         }
         public IActionResult Create()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult Create(Categoria obj)
+        public IActionResult Create(Producto obj)
         {
-            if (obj.nom_categoria == obj.DisplayOrder.ToString())
-            {
-                ModelState.AddModelError("nom_categoria", "El DisplayOrder no puede ser igual al nombre de categoria.");
-            }
             if (ModelState.IsValid)
             {
-                _unitOfWork.Categoria.Add(obj);
+                _unitOfWork.Producto.Add(obj);
                 _unitOfWork.Save();
-                TempData["success"] = "Categoria creada exitosamente";
+                TempData["success"] = "Producto creado exitosamente";
                 return RedirectToAction("Index");
             }
            return View();
@@ -44,20 +40,20 @@ namespace DTPCKase1._4.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Categoria? categoriaFromDb = _unitOfWork.Categoria.Get(u => u.Id == id);
-            if(categoriaFromDb == null) 
+            Producto? productoFromDb = _unitOfWork.Producto.Get(u => u.Id == id);
+            if(productoFromDb == null) 
             {
                 return NotFound(); 
             }
 
-            return View(categoriaFromDb);
+            return View(productoFromDb);
         }
         [HttpPost]
-        public IActionResult Edit(Categoria obj)
+        public IActionResult Edit(Producto obj)
         {
             if (ModelState.IsValid)
             {
-                _unitOfWork.Categoria.Update(obj);
+                _unitOfWork.Producto.Update(obj);
                 _unitOfWork.Save();
                 return RedirectToAction("Index");
             }
@@ -70,25 +66,25 @@ namespace DTPCKase1._4.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Categoria? categoriaFromDb = _unitOfWork.Categoria.Get(u => u.Id == id);
-            if (categoriaFromDb == null)
+            Producto? productoFromDb = _unitOfWork.Producto.Get(u => u.Id == id);
+            if (productoFromDb == null)
             {
                 return NotFound();
             }
 
-            return View(categoriaFromDb);
+            return View(productoFromDb);
         }
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePOST(int? id)
         {
-            Categoria? obj = _unitOfWork.Categoria.Get(u => u.Id == id);
+            Producto? obj = _unitOfWork.Producto.Get(u => u.Id == id);
             if (obj == null)
             {
                 return NotFound();
             }
-            _unitOfWork.Categoria.Remove(obj);
+            _unitOfWork.Producto.Remove(obj);
             _unitOfWork.Save();
-            TempData["success"] = "Categoria  Eliminada exitosamente";
+            TempData["success"] = "Producto  Eliminada exitosamente";
             return RedirectToAction("Index");
 
             return View();

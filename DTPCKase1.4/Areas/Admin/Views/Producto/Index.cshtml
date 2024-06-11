@@ -1,0 +1,83 @@
+﻿
+@model List<Producto>
+
+ <div class="card shadow border-0 mt-4">
+     <div class="card-header bg-secondary bg-gradient m-lg-0 py-3">
+         <div class="row">
+             <div class="col-12 text-center">
+                 <h2 class="text-white py-2">Lista Producto</h2>
+             </div>
+         </div>
+     </div>
+     <div class="card-body p-4">
+        <div class="row pb-3">
+            <div class="col-4   ">
+              
+            </div>
+            <div class="col-6 text-end">
+                <a asp-controller="Producto" asp-action="Create" class="btn btn-primary">
+                    <i class="bi bi-plus-circle"></i> Agregar Producto
+                </a>
+
+            </div>
+            <div class="col-6 text-end col-md-2">
+                <a asp-controller="Producto" asp-action="Index" class="btn btn-outline-primary border form-control">
+                    Regresar
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <table class=" table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Nombre_Producto
+                </th>
+                <th>
+                    Descripción
+                </th>
+                <th>
+                    Stock
+                </th>
+                <th>
+                    Precio
+                </th>
+                <th>
+                    Nombre Categoria
+                </th>
+
+                <th>
+                    Acciones
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td>@obj.nom_prod</td>
+                    <td>@obj.desc_prod</td>
+                    <td>@obj.stck_prod</td>
+                    <td>@obj.prec_prod</td>
+                    <td>@obj.Categoria</td>
+                    
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-controller="Producto" asp-action="Edit" asp-route-id="@obj.Id" class="btn btn-primary mx-2">
+                                <i class="bi bi-pencil-square"></i> Edit
+                            </a>
+                            <a asp-controller="Producto" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-danger mx-2">
+                                <i class="bi bi-trash-fill"></i> Delete
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+  
+     </div>
+  
+</div>
