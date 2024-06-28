@@ -1,0 +1,63 @@
+﻿
+@model List<Producto>
+
+ <div class="card shadow border-0 mt-4">
+     <div class="card-header bg-secondary bg-gradient m-lg-0 py-3">
+         <div class="row">
+             <div class="col-12 text-center">
+                 <h2 class="text-white py-2">Lista Producto</h2>
+             </div>
+         </div>
+     </div>
+     <div class="card-body p-4">
+        <div class="row pb-3">
+            <div class="col-4   ">
+              
+            </div>
+            <div class="col-6 text-end">
+                <a asp-controller="Producto" asp-action="Upsert" class="btn btn-primary">
+                    <i class="bi bi-plus-circle"></i> Agregar Producto
+                </a>
+
+            </div>
+            <div class="col-6 text-end col-md-2">
+                <a asp-controller="Producto" asp-action="Index" class="btn btn-outline-primary border form-control">
+                    Regresar
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <table id="tblData"class=" table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Nombre_Producto
+                </th>
+                <th>
+                    Descripción
+                </th>
+                <th>
+                    Stock
+                </th>
+                <th>
+                    Precio
+                </th>
+                <th>
+                    Categoria
+                </th>
+                <th>
+                    Acciones
+                </th>
+               
+            </tr>
+        </thead>
+       
+    </table>
+  
+     </div>
+  
+</div>
+@section Scripts{
+    <script src="~/js/producto.js"></script>
+}

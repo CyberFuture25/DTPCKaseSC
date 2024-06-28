@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DTPCKase1._4.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240531082459_SeedCategoryTable")]
-    partial class SeedCategoryTable
+    [Migration("20240612030901_addForeignKeyForCategoryProductRelation")]
+    partial class addForeignKeyForCategoryProductRelation
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -98,6 +98,48 @@ namespace DTPCKase1._4.Migrations
                     b.HasIndex("CategoriaId");
 
                     b.ToTable("Productos");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoriaId = 2,
+                            ImageUrl = "",
+                            desc_prod = "Lumina Luxe es una carcasa para PC elegante y sofisticada diseñada para cautivar al entusiasta de los juegos que hay en cada chica gamer.",
+                            nom_prod = "Lumina Luxe",
+                            prec_prod = 580.0,
+                            stck_prod = 10
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CategoriaId = 2,
+                            ImageUrl = "",
+                            desc_prod = "NovaFrost Nexus is the epitome of elegance and performance, tailored specifically for the discerning gamer girl. Its striking white chassis exudes a sense of purity and ",
+                            nom_prod = "NovaFrost Nexus",
+                            prec_prod = 600.0,
+                            stck_prod = 15
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CategoriaId = 2,
+                            ImageUrl = "",
+                            desc_prod = "Esta carcasa para PC se inspira en el icónico Portal Gun de Rick de \"Rick y Morty\", y presenta líneas elegantes y elementos futuristas que recuerdan la estética del programa.",
+                            nom_prod = "Portal Gun Inspired PC Case",
+                            prec_prod = 700.0,
+                            stck_prod = 6
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CategoriaId = 2,
+                            ImageUrl = "",
+                            desc_prod = "Abraza el poder de Dragon Balls con esta carcasa para PC inspirada en la icónica serie de anime. Con colores vibrantes, líneas elegantes y detalles intrincados que recuerdan al universo Dragon Ball, este estuche te transporta al mundo de Goku, Vegeta y sus batallas épicas contra enemigos poderosos.",
+                            nom_prod = "Dragon Ball Inspired PC Case",
+                            prec_prod = 699.0,
+                            stck_prod = 25
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

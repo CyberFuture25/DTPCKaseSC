@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/DTPCKase1._4.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.js"
-            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-            crossorigin="anonymous"></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+   
     <link rel="stylesheet" href="//cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css" />
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="//cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css"/>
 
 </head>
 <body>
@@ -42,18 +42,18 @@
                                 <li class="nav-item">
                                     <a class="dropdown-item" asp-area="Admin" asp-controller="Categoria" asp-action="Index">Categoria</a>
                                 </li>
-                                <li class="nav-item">
+                                 <li class="nav-item">
                                     <a class="dropdown-item" asp-area="Admin" asp-controller="Producto" asp-action="Index">Productos</a>
-                                </li>
+                                </li> 
                                 <li class="nav-item">
-                                    <a class="dropdown-item" asp-area="Admin" asp-controller="Company" asp-action="Index">Company</a>
+                                    <a class="dropdown-item"  asp-controller="Customer" asp-action="Index">Company</a>
                                 </li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li class="nav-item">
-                                    <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Register">Create User</a>
+                                    <a class="dropdown-item"  asp-page="/Account/Register">Create User</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="dropdown-item" asp-area="Admin" asp-controller="User" asp-action="Index">Manage User</a>
+                                    <a class="dropdown-item"  asp-controller="User" asp-action="Index">Manage User</a>
                                 </li>
 
                             </ul>
@@ -61,24 +61,31 @@
                     </ul>
                 </div>
             </div>
+
         </nav>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            <partial name="_Notification" />
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer bg-primary-black text-muted">
+    <footer class="border-top footer bg-primary-white text-muted">
         <div class="text-center">
-            &copy; 2024 - Mikey Aranguren - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2024 - Mikey Aranguren
         </div>
+      
     </footer>
+ 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="//cdn.datatables.net/2.0.8/js/dataTables.min.js" asp-append-version="true"></script>
     <script src="//cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js" asp-append-version="true"></script>
+    <script src="https://cdn.tiny.cloud/1/6dli3wntnyer4qke93ylab9yxkgt9psf4yqisck5x5gprs5r/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
