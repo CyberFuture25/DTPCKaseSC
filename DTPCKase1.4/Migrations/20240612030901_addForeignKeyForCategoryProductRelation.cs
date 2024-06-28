@@ -5,7 +5,7 @@
 namespace DTPCKase1._4.Migrations
 {
     /// <inheritdoc />
-    public partial class AddCategoryTableToDb : Migration
+    public partial class addForeignKeyForCategoryProductRelation : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

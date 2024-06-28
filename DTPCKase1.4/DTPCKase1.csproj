@@ -28,6 +28,7 @@
 	  <Folder Include="Areas\Customer\Data\" />
 	  <Folder Include="Areas\Customer\Models\" />
 	  <Folder Include="Migrations\" />
+	  <Folder Include="wwwroot\images\producto\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <None Include="Areas\Admin\Views\Categoria\Edit.cshtml" />
