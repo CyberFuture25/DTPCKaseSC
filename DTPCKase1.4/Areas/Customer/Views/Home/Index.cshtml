@@ -1,8 +1,36 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+﻿@model IEnumerable<Producto>
+@using System.Globalization
+<div class="row pb-3">
+    @foreach(var producto in Model)
+    {
+        <div class="col col-lg-3 col-sm-6">
+            <div class="row p-2">
+                <div class="col-12 p-1 py-2">
+                    <div class="card border-0 p-5 shadow border-5 rounded">
+                   <img src="@producto.ImageUrl" class="card-img-top rounded" />
+                   <div class="card-body pb-0">
+                            <p class="card-title h5 text-dark opacity-75 text-uppercase text-center">@producto.nom_prod</p>
+                            <p class="card-title text-warning text-center">Categoría: <b>@producto.Categoria.nom_categoria</b></p>
+                    </div>
+                    <div class="pl-1">
+                        <p class="text-dark text-opacity-75 text-center mb-0">
+                            Precio:
+                                <span style="font-size:18px;color: #009a22; text-decoration: underline; font-weight: bold;">
+                              @producto.prec_prod.ToString("C", new CultureInfo("es-PE"))
+                              </span>
+                       </p>
+                    </div>
+                    <br>
+                    <div>
+                        <a asp-action="Details"
+                        asp-route-productoId="@producto.Id"
+                        class="btn btn-primary bg-gradient border-0 form-control">
+                            Detalles
+                        </a>
+                    </div>
+               </div>
+          </div>
+    </div>
+    </div>
+    }
+ </div>
