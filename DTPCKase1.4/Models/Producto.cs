@@ -23,5 +23,6 @@ namespace DTPCKase1._4.Models
         public Categoria? Categoria { get; set; }
         [ValidateNever]
         public string? ImageUrl { get; set; }
+
     }
 }

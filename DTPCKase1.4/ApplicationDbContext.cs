@@ -16,6 +16,10 @@ namespace DTPCKase1._4
         }
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Producto> Productos { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<ShoppingCart> ShoppingCarts { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -25,6 +29,10 @@ namespace DTPCKase1._4
                   new Categoria { Id = 2, nom_categoria = "Laptop Skins", DisplayOrder = 2 },
                   new Categoria { Id = 3, nom_categoria = "Mousepads", DisplayOrder = 3 }
                   );
+
+            modelBuilder.Entity<Company>().HasData(
+            new Company { Id = 1, Name = "DTPCKase", StreetAddress = "Av. Santa Cruz 843 - Miraflores", City ="Lima", PostalCode="51",State="Miraflores", PhoneNumber="+51 968452366" }
+            );
 
             modelBuilder.Entity<Producto>().HasData(
   new Producto

@@ -6,6 +6,7 @@ namespace DTPCKase1._4.Repository
     {
         public ApplicationDbContext _db;
         public ICategoryRepository Categoria { get; private set; }
+        public ICompanyRepository Company { get; private set; }
         public IProductRepository Producto { get; private set; }
         public UnitOfWork(ApplicationDbContext db)
         {
@@ -13,6 +14,7 @@ namespace DTPCKase1._4.Repository
         _db = db;
             Categoria = new CategoriaRepository(_db);
             Producto = new ProductoRepository(_db);
+            Company = new CompanyRepository(_db);
         } 
 
        

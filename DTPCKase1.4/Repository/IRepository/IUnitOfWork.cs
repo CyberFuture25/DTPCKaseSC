@@ -11,6 +11,7 @@ namespace DTPCKase1._4.Repository.IRepository
     {
         ICategoryRepository Categoria { get; }
         IProductRepository Producto { get; }
+        ICompanyRepository Company { get; }
 
         void Save();
     }

@@ -1,12 +1,14 @@
 ﻿using DTPCKase1._4.Models;
 using DTPCKase1._4.Repository.IRepository;
 using DTPCKase1._4.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace DTPCKase1._4.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    //[Authorize(Roles = SD.Role_Admin)]
     public class ProductoController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;

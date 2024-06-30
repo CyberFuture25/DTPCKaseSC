@@ -1,10 +1,12 @@
 ﻿using DTPCKase1._4.Models;
 using DTPCKase1._4.Repository.IRepository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DTPCKase1._4.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    //[Authorize(Roles = SD.Role_Admin)]
     public class CategoriaController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
